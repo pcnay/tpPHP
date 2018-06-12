@@ -8,12 +8,12 @@
     // Estatico y accesible solamente en las clases hijas.
     // protected = Accesible desde la misma clase y desde las clases que lo hereden.
     // private = Solo es accesible dentro de la clase donde se define.
-    private stactic $dbhost = 'localhost';
-    private stactic $db_user = 'root';
-    private stactic $db_pass = '';
+    private static $db_host = 'localhost';
+    private static $db_user = 'root';
+    private static $db_pass = '';
     // private static $db_name = 'mexflix';
     protected $db_name = 'mexflix';
-    private stactic $db_charset = 'utf8';
+    private static $db_charset = 'utf8';
     private $conn;
     protected $query;
     protected $rows = array();
@@ -59,7 +59,7 @@
     protected function get_query()
     {
       $this->db_open();
-      $result = $this->conn->query($this->query) // Asigna el valor de la ejecución del Query.
+      $result = $this->conn->query($this->query); // Asigna el valor de la ejecución del Query.
 
       // $this->rows[] se define como arreglo.
       // fetch_assoc() = Devuelve los reg de la consulta por el nombre del campo.
@@ -71,8 +71,8 @@
       // Se Cierra la conexión.
       $result->close();
       $this->db_close();
-
-      return $this->rows;
+      // "array_pos" se agrega ya que borra el último elemento, ya que por defecto agrega un null al final.
+      return array_pos($this->rows);
       
 
     }

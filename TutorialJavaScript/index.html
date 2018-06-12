@@ -23,9 +23,35 @@
         3.- Navigator
         
          */
-
-
         
+        document.write("<h1>"+Date()+"</h1>");
+        
+      </script>
+      <hr />
+      <h2>Reemplazar Contenido HTML </h2>
+      <p id = "fecha">Este es un parrafo</p>
+ 
+      <script>
+        document.getElementById("fecha").innerHMTL = Date;
+      </script>
+      <hr />
+      <h2>Reemplazar contenido HTML con un evento</h2>
+      <p id = "fecha2">Este es otro parrafo</p>
+      <input type="button" value="Mostrar Fecha" onclick="mostrarFecha()"/>
+      <script>
+        function mostrarFecha()
+        {
+          document.getElementById("fecha2").innerHTML = Date();
+        }
+      </script>
+      <hr />
+      <h2>Variables </h2>
+      <script>
+        var y = 5; 
+        document.write(y);
+        x = 10;
+        x*=10;
+        document.write("<br />"+x);
       </script>
     </body>
 </html>
