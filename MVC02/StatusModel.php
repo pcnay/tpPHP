@@ -53,6 +53,21 @@
       // Se ejecuta un método de la clase "model" para la ejecución la consulta y se obtienen los datos en un arreglo "rows".
       $this->get_query();
       
+      $num_rows = count($this->rows);
+      // echo $num_rows;
+      $data = array();
+      // Permite recorrer un arreglo de una forma más optimizada.
+      // http://php.net/manual/en/control-structures.foreach.php
+      // De los elementos del arreglo "rows" le asigna los valores de "Llave" su valor, ya que es un arreglo asociativo
+      // Es decir que los pasa a Arreglo Asociativo Clave , Valor.
+      foreach ($this->rows as $nombreCampo => $valorCampo)
+      {
+        // Agrega una nueva posicion al final del arreglo.
+        // array_push($data,$valorCampo);
+        $data[$nombreCampo] = $valorCampo;
+      }
+      
+      return $data;
     }
     public function update()
     {
