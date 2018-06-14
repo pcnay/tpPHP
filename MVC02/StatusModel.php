@@ -47,12 +47,12 @@
 
       */
       // Se asigna al atributo de "query" de la clase "model", donde se aloja la consulta a ejecutar.
+      
       $this->query = $sql;
       
-      // Se ejecuta un método de la clase "model" para la ejecución la consulta y se obtienen los datos en un arreglo.
-      $this->get_query;
-
-
+      // Se ejecuta un método de la clase "model" para la ejecución la consulta y se obtienen los datos en un arreglo "rows".
+      $this->get_query();
+      
     }
     public function update()
     {
