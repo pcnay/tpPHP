@@ -81,12 +81,109 @@
         switch(dia)
         {
           case 0:
-            document.write("<br / >Domingo =D");           
-          case 1:
-            document.write("<br / >Lunes ");
-                       
+            document.write("<br / >Domingo =D");
+            break;           
+          case 5:
+            document.write("<br / >Por Fin es Vieeerrrnnnnneeeeessssss");
+            break;
+          case 6:
+            document.write("<br / >Es Sábado ");            
+            break;
+          default:
+            document.write("<br />Esperando que llegue el fin de semana");
+            break;                       
         }
 
+      </script>
+      <hr />
+      <h2>For</h2>
+      <script>
+        // 3 Partes 1) Inicializacion, 2) Condición 3) incremento o decremento.
+        var i;
+        for (i=1;i<7;i++)
+        {
+          document.write("<h"+i+">Encabezado de tipo "+i+"</h"+i+">");
+        }
+      </script>
+      <hr/>
+      <h2>While</h2>
+      <script>
+        var j=6;
+        while(j>=1)
+        {
+          document.write("<h"+j+">Encabezado de tipo "+j+"</h"+j+">");
+          j--;
+
+        }
+      </script>
+      <hr/>
+      <h2>Caja de Interacción</h2>
+      <script>
+        function mostrarAlerta()
+        {
+          alert("Hola");
+        }
+        function mostrarConfirmacion()
+        {
+          confirm("Selecciona una opcion");
+        }
+        function mostrarDialogo()
+        {
+          prompt ("Escribe tu nombre");
+        }
+
+      </script>
+        <input type="button" value = "Caja de Alerta" onclick = "mostrarAlerta()" />
+        <input type="button" value = "Caja de Confirmación" onclick = "mostrarConfirmacion()" />
+        <input type="button" value = "Caja de Dialogo" onclick = "mostrarDialogo()" />
+      <hr/>
+      <h2>Try .... Catch(Detección de Errores)</h2>
+      <script>
+        function mensajeError()
+        {
+          try
+          {
+            aler("Hola");
+          }
+          catch(error)
+          {
+            alert(error.message)
+          }
+        }
+      </script>
+      <input type="button" value = "Ver error" onclick="mensajeError()"/>
+      <hr/>
+      <h2>Consola de JavaScript</h2>
+      <script>
+        function mostrarConsola()
+        {
+          var nombre = "Juan Perez";
+          console.log("Hola "+nombre);
+
+        }
+      </script>
+      <input type="button" value = "Ver consula" onclick="mostrarConsola()"/>
+      <hr/>
+      <h2>Arreglos</h2>
+      <script>
+        var misVariables = new Array("cadena",3,true);
+        document.write(misVariables +"<br />");
+        document.write(misVariables[0] +"<br />");
+        document.write(misVariables[1] +"<br />");
+        document.write(misVariables[2] +"<br />");
+        var semana = new Array("Domingo","Lunes","Martes","Miercoles","Jueves","Viernes","Sabado");
+        for (var n=0; n<semana.length;n++)
+        {
+          document.write(semana[n]+"<br/>");
+        }
+      </script>
+      <hr/>
+      <h2>Información del Navegador</h2>
+      <hr/>
+      <script>
+        document.write("Nombre : "+navigator.appName+"<br />");
+        document.write("Version : "+navigator.appVersion+"<br />");
+        document.write("Sistema Operativo : "+navigator.platform+"<br />");
       </script>
     </body>
 </html>
