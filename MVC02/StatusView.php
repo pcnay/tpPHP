@@ -8,8 +8,10 @@
 
   
   // Es esta línea se hace la conexion del modelo con la vista.
+  // Se genera el arreglo donde contiene los datos de la consulta.
   $status_data = $status->read();
-  var_dump($status_data);
+  // Pasa de un objeto a texto, para poderlo visualizar.
+  // var_dump($status_data);
   
 // Mostrando los datos en pantalla.
   $num_status = count($status_data);
@@ -32,7 +34,11 @@
           }
   echo '</table>';
 
+  echo '<h2> Insertando Status</h2>';
 
+  echo '<h2> Actualizando Status</h2>';
+
+  echo '<h2> Eliminado Status</h2>';          
 
 
 ?>
