@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset = "utf-8" />
+    <title>Validacion de formularios con JavaScript</title>
+    <!-- Buenas practicas CEO debe llevar un titulo y descripcion para el posicionamiento  -->
+    <meta name= "description" content ="En este ejercicio aprenderemos a validar con JS" />
+    <link rel = "stylesheet" href="css/estilos.css" />
+    <script src="js/Validaciones.js"></script>
+
+  </head>
+  <body>
+    <!-- Si no se especifica valor alguno en "action" no se procesa del lado del servidor. 
+    Con el atributo "name" = se utiliza para llamarlo desde un lenguaje del laod del servidor como PHP -->
+
+    <form id = "contacto-frm" name action ="" method="GET" enctype = "application/x-www-form-urlencoded">
+      <!-- Dibujando un marco al formulario -->
+      <fieldset>
+        <legend> Contacto</legend>
+        <!-- Cuando en la etiqueta label se coloca el mismo nombre de id de "input" cuando se hace click en la etiqueta nombre
+        Se coloca el foco en el "input" de nombre -->
+        <label for = "nombre">Nombre :</label>
+        <input type = "text" id="nombre" name = "nombre_txt"  />
+        <br /><br />
+        <label for = "edad">edad :</label>
+        <input type = "text" id="edad" name = "edad_txt"  />
+        <br /><br />
+        <label for = "email">Email :</label>
+        <input type = "text" id="email" name = "email_txt"  />
+        <br /><br />
+        <label for = "sexo">Sexo :</label>
+        <br /><br />
+        
+        <!-- Se coloca el mismo "name" a los RadioButton para que se una sola instrucción. -->
+        <input type= "radio" id= "M" name = "sexo_rdo" value = "M" />
+        <label for = "M" >Masculino</label>
+        <input type= "radio" id= "F" name = "sexo_rdo" value = "F" />
+        <label for = "F" >Femenino</label>
+        <br /><br />
+
+        <label for = "asunto">Asunto :</label>
+        <input type = "text" id="asunto" name = "asunto_txt"  />
+        <br /><br />
+
+
+      </fieldset>
+
+    </form>
+  </body>
+
+</html>
