@@ -1,10 +1,11 @@
 <?php
-  require ('StatusModel.php');
+  require ('StatusController.php');
 
 
   // Se define solo código HTML, pero se mezclara con PHP de forma ordenada.
   echo '<h1> CRUD DE LA TABLA - STATUS -';
-  $status = new StatusModel();
+  $status = new StatusController();
+  // Se cambia de "StatusView" a "StatusController" por la separación de Capas M-V-C
 
   
   // Es esta línea se hace la conexion del modelo con la vista.
@@ -34,26 +35,29 @@
           }
   echo '</table>';
 
-  /*
+
   echo '<h2> Insertando Status</h2>';
     $new_status = array(
       'status_id'=>0, // para que agrega el último número.
-      'status'=>'Otro Status'
+      'status'=>'Otro Status3'
     );
 
   // Ingresar un registro en la tabla de "Status".
   $status->create($new_status);
-*/
 
+
+/*
   echo '<h2> Actualizando Status</h2>';
+
   $update_status = array(
     'status_id'=>6, // para que agrega el último número.
     'status'=>'Other Status'
   );
   $status->update($update_status);
+*/
 
   echo '<h2> Eliminado Status</h2>';          
-  $status->delete(6);
+//  $status->delete(6);
   
 
 ?>
