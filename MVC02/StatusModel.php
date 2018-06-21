@@ -20,9 +20,26 @@
 
     // Se comenzara a definir los métodos para el CRUD de la tabla "Status"
     // como se hereda de la clase Abstracta de "Model", se tienen que definir todos los metodos en la clase de que  hereda.
-  
-    public function create()
+    
+    // Se pasa como parametro un arreglo, que se define en la cabecera de la función.
+
+    public function create($status_data=array())
     {
+      foreach ($status_data as $nombreCampo => $valorCampo)
+      {
+        // De valores de Arreglo Asociativos a variables de PHP, $$nombreCampo
+        // Variables de Variable.
+        //http://php.net/manual/es/language.variable.variable.php
+        $$nombreCampo = $valorCampo;
+      }  
+
+      // Se usan las comillas porque se manejan parametros en la consultas.
+      // Se agrega el script para la ejecución de la consulta.
+      $this->query = "INSERT INTO status (status_id,status) VALUES ($status_id,'$status')";
+
+      //Ejecuta las instrucciones de la consulta anterior.
+      $this->set_query();
+
 
     }
     // Si no tiene valor el parametro pasado, se le asigna en blanco.
@@ -69,13 +86,30 @@
       
       return $data;
     }
-    public function update()
+
+    public function update($status_data = Array())
     {
+      foreach ($status_data as $nombreCampo => $valorCampo)
+      {
+        // De valores de Arreglo Asociativos a variables de PHP, $$nombreCampo
+        // Variables de Variable.
+        //http://php.net/manual/es/language.variable.variable.php
+        $$nombreCampo = $valorCampo;
+      }  
+
+      // Se usan las comillas porque se manejan parametros en la consultas.
+      // Se agrega el script para la ejecución de la consulta.
+      $this->query = "UPDATE status SET status_id = $status_id,status = '$status' WHERE status_id = $status_id";
+            
+      //Ejecuta las instrucciones de la consulta anterior.
+      $this->set_query();
 
     }
-    public function delete()
+    // Recibe como parámetro 
+    public function delete($status_id='')
     {
-
+      $this->query = "DELETE FROM status WHERE status_id = $status_id";
+      $this->set_query();
     }
 
   }

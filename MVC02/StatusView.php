@@ -34,11 +34,26 @@
           }
   echo '</table>';
 
+  /*
   echo '<h2> Insertando Status</h2>';
+    $new_status = array(
+      'status_id'=>0, // para que agrega el último número.
+      'status'=>'Otro Status'
+    );
+
+  // Ingresar un registro en la tabla de "Status".
+  $status->create($new_status);
+*/
 
   echo '<h2> Actualizando Status</h2>';
+  $update_status = array(
+    'status_id'=>6, // para que agrega el último número.
+    'status'=>'Other Status'
+  );
+  $status->update($update_status);
 
   echo '<h2> Eliminado Status</h2>';          
-
+  $status->delete(6);
+  
 
 ?>
